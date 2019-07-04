@@ -45,8 +45,8 @@ function Banner(props) {
           <GitHubButton
             key="github-button"
             type="stargazers"
-            namespace="ant-design"
-            repo="wetrial"
+            namespace="wetrial"
+            repo="jui-site"
           />
         </div>
       </QueueAnim>
