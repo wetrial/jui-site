@@ -57,16 +57,18 @@ $item.layer({
 });
 ```
 ### 2. SIS端(机构、申办方、伦理等)
->   如果发现缺失引用，可以自行引入如下文件
+如果发现缺失引用，可以自行引入如下文件。
+```
     Html.AddScriptFile("~/Assets/js/jsencrypt.min.js?v=" + CTS.Infrastructure.AppVersionHelper.Version);
     Html.AddScriptFile("~/Scripts/RsaKey?v=" + CTS.Infrastructure.AppVersionHelper.Version);
     Html.AddScriptFile("~/Assets/js/common/RSAEncrypt.js?v=" + CTS.Infrastructure.AppVersionHelper.Version);
     Html.AddScriptFile("~/bundles/jui?v=" + CTS.Infrastructure.AppVersionHelper.Version);
+```
 * ajax 方法相关(utils.ajax.postJson、utils.ajax.postWithNoMsg、utils.ajax.post 如果有遇到使用$.ajax调用的，请改为如下方法)  
-> 由于之前的ajax相关方法设计问题，增加替换方法，原则上所有使用如下方法的地方都可以用后者代替  
-utils.post==> 使用utils.ajax.post 代替  
-utils.postWithNoMsg==> 使用utils.ajax.postWithNoMsg 代替  
-utils.postJson==> 使用utils.ajax.postJson 代替  
+> 由于之前的ajax相关方法设计问题，增加替换方法，原则上所有使用如下方法的地方都可以用后者代替。
+> utils.post==> 使用utils.ajax.post 代替  
+> utils.postWithNoMsg==> 使用utils.ajax.postWithNoMsg 代替  
+> utils.postJson==> 使用utils.ajax.postJson 代替  
 ``` js
 // example
 utils.ajax.post({
@@ -99,7 +101,7 @@ utils.ajax.postJson({
 
 
 ### 1. 请求内容加密
-在对应的Action上贴上[DecryptRequestFilter]即可
+> 在对应的Action上贴上[DecryptRequestFilter]即可
 ``` C#
 [DecryptRequestFilter]
 public ActionResult Save(User user){
@@ -107,7 +109,7 @@ public ActionResult Save(User user){
 }
 ```
 ### 2. 响应内容加密
-在对应的Action上贴上[EncryptResponseFilter]即可
+> 在对应的Action上贴上[EncryptResponseFilter]即可
 ``` C#
 [EncryptResponseFilter]
 public ActionResult Query(QueryInput input){
@@ -115,7 +117,7 @@ public ActionResult Query(QueryInput input){
 }
 ```
 ### 3. 请求与响应都加密
-在对应的Action上贴上[DecryptRequestFilter]和[EncryptResponseFilter]即可
+> 在对应的Action上贴上[DecryptRequestFilter]和[EncryptResponseFilter]即可
 ``` C#
 [DecryptRequestFilter]
 [EncryptResponseFilter]
