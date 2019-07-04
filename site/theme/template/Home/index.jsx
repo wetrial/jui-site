@@ -8,7 +8,7 @@ import Page2 from './Page2';
 
 function Home(props) {
   return (
-    <DocumentTitle title={`Wetrial - ${props.intl.formatMessage({ id: 'app.home.slogan' })}`}>
+    <DocumentTitle title={`jui - ${props.intl.formatMessage({ id: 'app.home.slogan' })}`}>
       <div className="home-wrapper">
         <Banner isMobile={props.isMobile} />
         <Page1 isMobile={props.isMobile} />
