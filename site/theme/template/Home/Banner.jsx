@@ -27,7 +27,7 @@ function Banner(props) {
         <div key="line" className="title-line-wrapper">
           <div className="title-line" style={{ transform: 'translateX(-64px)' }} />
         </div>
-        <h1 key="h1">Wetrial</h1>
+        <h1 key="h1">jui</h1>
         <p key="content">
           <FormattedMessage id="app.home.slogan" />
         </p>

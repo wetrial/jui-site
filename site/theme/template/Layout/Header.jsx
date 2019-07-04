@@ -122,7 +122,7 @@ class Header extends React.Component {
       title: formatMessage({ id: 'app.publish.title' }),
       content: (
         <div>
-          <img src={wetrial} alt="Wetrial" />
+          <img src={wetrial} alt="jui" />
           <p>
             {formatMessage({ id: 'app.publish.greeting' })}
             <a
@@ -270,7 +270,7 @@ class Header extends React.Component {
           <Col xxl={4} xl={5} lg={8} md={8} sm={24} xs={24}>
             <Link id="logo" to="/">
               <img src={wetrial} alt="logo" />
-              <img src={wetrialLogo} alt="Wetrial" />
+              <img src={wetrialLogo} alt="jui" />
             </Link>
           </Col>
           <Col xxl={20} xl={19} lg={16} md={16} sm={0} xs={0}>

@@ -4,7 +4,7 @@ import { Tooltip, Icon } from 'antd';
 export default function EditButton({
   title,
   filename,
-  sourcePath = 'https://github.com/wetrial/wetrial-site/edit/master/',
+  sourcePath = 'https://github.com/wetrial/jui-site/edit/master/',
 }) {
   return (
     <Tooltip title={title}>

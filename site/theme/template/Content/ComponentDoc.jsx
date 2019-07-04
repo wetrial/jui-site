@@ -97,7 +97,7 @@ export default class ComponentDoc extends React.PureComponent {
     const { title, subtitle, filename } = meta;
     const isNotTranslated = locale === 'en-US' && typeof title === 'object';
     return (
-      <DocumentTitle title={`${subtitle || ''} ${title[locale] || title} - Wetrial`}>
+      <DocumentTitle title={`${subtitle || ''} ${title[locale] || title} - jui`}>
         <article>
           <Affix
             className="toc-affix"
@@ -137,7 +137,7 @@ export default class ComponentDoc extends React.PureComponent {
               <EditButton
                 title={<FormattedMessage id="app.content.edit-page" />}
                 filename={filename.replace('scaffold/', '')}
-                sourcePath="https://github.com/wetrial/wetrial/edit/master/"
+                sourcePath="https://github.com/wetrial/jui-site/edit/master/"
               />
             </h1>
             {props.utils.toReactComponent(
