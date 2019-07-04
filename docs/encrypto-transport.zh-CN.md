@@ -11,6 +11,7 @@ type: 基础
 
 #### 增加配置项 crypto:1|2|4    1:仅请求内容需要加密、2:仅响应内容需要解密 4：请求内容加密、响应内容需要解密
 > 注: 加密仅针对post的data，url上的不会进行加密，正对系统参数，如:(oid,appid等) 建议保持原状以queryString形式附带
+
 ``` js
 // 整队jlistGrid同样适用
 $("#list").jlist({
@@ -102,14 +103,17 @@ utils.ajax.postJson({
 
 ### 1. 请求内容加密
 > 在对应的Action上贴上[DecryptRequestFilter]即可
+
 ``` C#
 [DecryptRequestFilter]
 public ActionResult Save(User user){
     
 }
+
 ```
 ### 2. 响应内容加密
 > 在对应的Action上贴上[EncryptResponseFilter]即可
+
 ``` C#
 [EncryptResponseFilter]
 public ActionResult Query(QueryInput input){
@@ -118,6 +122,7 @@ public ActionResult Query(QueryInput input){
 ```
 ### 3. 请求与响应都加密
 > 在对应的Action上贴上[DecryptRequestFilter]和[EncryptResponseFilter]即可
+
 ``` C#
 [DecryptRequestFilter]
 [EncryptResponseFilter]
