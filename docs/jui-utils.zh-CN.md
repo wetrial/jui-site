@@ -13,7 +13,7 @@ CTMS、项目中心框架的一些公用方法。
 ### 1. 文本域自动适应内容高度
 使Textarea在输入内容时可以自动增加高度，在只读模式中能根据内容高度自动拉伸
 
-``` js
+```js
 utils.initAutoTextarea(container,height)
 ```
 >当不传入参数，直接调用方法时，会给页面内所有带有`data-auto-textarea="true"`属性的文本域进行自适应高度处理，传入`container`参数时则不需要单独给文本域添加属性
