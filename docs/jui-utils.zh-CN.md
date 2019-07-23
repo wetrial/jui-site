@@ -149,21 +149,27 @@ offsetElement|selector|是|目标表头
 
 
 
-### 6. 把按照逗号组合的字符串拼接成某一样式的字符串
-把按照逗号组合的字符串拼接成某一样式的字符串
+### 6. 合并表格列
+合并表格列
 
 ```js
-  function SplitUserName(userName)
-```
+  $(selector).mergeCell(options) //根据内容合并表格列
 
-
-
-### 7. 合并同内容表格
-合并同内容表格
-
-```js
-  $(selector).mergeCell(options)
+  $(selector).mergeCellAttr(options) //根据属性合并表格列
 ```
 参数|类型|是否必须|注释
 -|-|-|-
 options|object|是|cols必填，`{ cols:[0] }`，表示想要合并的td索引值数组
+
+
+
+### 7. 监控Capslock是否打开
+监控Capslock是否打开
+
+```js
+  detectCapsLock(event, text)
+```
+参数|类型|是否必须|注释
+-|-|-|-
+event|event|否|默认`window.event`
+text|string|否|不传则默认提示"大写锁定已开启"
