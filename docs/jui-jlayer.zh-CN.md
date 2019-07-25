@@ -37,12 +37,8 @@ $(selector).jlayer('isShown') //返回一个布尔值，判断是否已显示
 
 配置项|类型|默认值|注释
 -|-|-|-
-autoRender|boolean|`false`|自动渲染DOM结构
-autoShow|boolean|`true`|自动显示
-alwaysExist|boolean|`false`|关闭后不销毁结构
 appendTo|selector|`body`|依附的父容器
 insertAfter|selector|`null`|插入在指定元素之后
-attachTo|selector|`null`|-
 theme|string|`null`|主题class
 modal|boolean|`false`|是否模态框
 closeOnClickBackdrop|boolean|`false`|是否点击背景部分触发关闭
