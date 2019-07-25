@@ -14,7 +14,7 @@ type: jui相关
 - 基本弹出层
 
 ```
-$(select).jlayer(options)
+$(selector).jlayer(options)
 ```
 
 
