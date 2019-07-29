@@ -6,7 +6,7 @@ type: jui相关
 
 ## 使用场景
 
-展示行列数据。
+通用列表。
 
 ### 代码展示
 
@@ -22,7 +22,6 @@ $("绑定的元素").jlist({ 需传递的参数 });
 
 [pager 分页](http://docs/jui-jpager-cn)
 
-[jqueryui]()
 
 ## 参数
 
