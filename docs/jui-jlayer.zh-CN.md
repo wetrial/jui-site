@@ -105,3 +105,26 @@ $(selector).jpop(options)
 > 在触发元素上调用jpop插件方法，默认的触发类型是click。
 层的默认定位是在触发元素的左下角。当页面底部空间不够时，层会“触底反弹”到触发元素的左上角去，并且会尽量保证在可视窗内显示。
 当层显示时，点击触发元素和层之外的地方会关闭层。
+
+### 配置项
+
+配置项|类型|默认值|注释
+-|-|-|-
+trigger|selector|`null`|触发器，不指定则默认当前元素
+triggerType|string|`click`|触发方式，默认是点击
+layerElem|object|`null`|层容器dom结构，默认`null`表示容器是`<div></div>`
+layer|object|-|覆盖jlayer的相关配置，详见下方示例
+hideOnClickAnywhere|boolean|`false`|是否点击任意位置触发关闭
+theme|string|`null`|风格类class
+
+```
+layer: {
+    autoShow: false, // 自动显示，默认否
+         position: { // 位置相关设置，用法参考jlayer
+             my: "left top",
+             at: "left bottom",
+             of: this.element,
+             collision: "flipfit",
+    }
+},
+```
