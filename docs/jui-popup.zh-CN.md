@@ -57,3 +57,25 @@ position: {
 },
 ```
 
+
+
+## 3. 扩展方法
+
+- 有各自风格样式的模态框型提示框
+```
+//msg:信息内容,callback：回调，time：延时关闭，不传并且type不是loading的时候，点击关闭
+Popup.modalTip.loading(msg)
+Popup.modalTip.success(msg, callback, time) 
+Popup.modalTip.warning(msg, callback, time) 
+Popup.modalTip.close(callback) //关闭提示框并执行回调函数
+```
+
+- 有各自风格样式的非模态框型提示框
+```
+//msg:信息内容,callback：回调，time：延时关闭，不传并且type不是loading的时候，点击关闭
+Popup.tip.loading(msg)
+Popup.tip.success(msg, callback, delay, time) 
+Popup.tip.warning(msg, callback) 
+Popup.confirm(title, msg, onConfirm, onCancel) //需要确认的提示框，title:标题，onConfirm：点击确定回调，onCancel：点击取消回调
+Popup.alertConfirm(title, msg, onConfirm) //需要确认的警告框，没有取消按钮，title:标题，onConfirm：点击确定回调
+```
