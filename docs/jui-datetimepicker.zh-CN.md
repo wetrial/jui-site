@@ -24,7 +24,7 @@ $("绑定的元素").datepicker({ 需传递的参数 });
 在input标签中添加 datepicker="true"/datepicker="True" 属性
 例如：
   <input  datepicker="true"  />
-调用 utils.initDatePicker({需传递的参数});方法
+调用 utils.initDatePicker({需传递的参数,也可不传});方法
 ```
 
 #### ---日期+时间插件
@@ -65,8 +65,10 @@ $("绑定的元素").daterangepicker({ 需传递的参数 });
 | 参数              | 类型                    | 是否必须 | 默认值     | 注释                                                                                         |
 | ----------------- | ----------------------- | -------- | ---------- | -------------------------------------------------------------------------------------------- |
 | showDate          | Boolean                 | 否       | true       | 是否显示日期                                                                                 |
-| showTime          | Boolean                 | 否       | true       | datetimepicker时是否显示时间                                                                                |
+| showTime          | Boolean                 | 否       | true       | datetimepicker 时是否显示时间                                                                |
 | yearRangeValue    | Array                   | 否       | `[100,50]` | 当前显示的年的范围，索引 0 的表示需显示多少个大于当前年的年范围，索引 1 的表示需显示多少个年 |
+| minDate           | string                  | 否       | 无         | 最小日期(xxxx-xx-xx)                                                                         |
+| maxDate           | string                  | 否       | 无         | 最大日期(xxxx-xx-xx)                                                                         |
 | onSelect          | function(date: moment） | 否       | 无         | 点击选择日期回调                                                                             |
 | appendTo          | String                  | 否       | 无         | 容器定位                                                                                     |
 | clearText         | String                  | 否       | "清空"     | 清空输入框文案                                                                               |
