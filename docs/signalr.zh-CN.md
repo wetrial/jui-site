@@ -1,7 +1,7 @@
 ---
 order: 2
 title: 推送相关
-type: 推送
+type: 基础
 ---
 
 ## 使用场景
@@ -24,8 +24,10 @@ type: 推送
 聊天        | -               |   
 
 ## 使用方式
+
+### 给指定人推送
 ``` C#
-// 创建推送对象
+// 给指定人推送
 var send = new Send()
 {
     // 推送的组，多个用,隔开
@@ -45,8 +47,26 @@ var send = new Send()
 HubContext.PushNotify(send);
 ```
 
+### 给指定连接推送
+> 应用场景,比如:文件后台打包下载，那么下载的时候应该只推给当前操作的tab页，而不是当前用户
+``` C#
+var send=new SendConnects(){
+  // 对应连接Id，需要从客户端传递到后台方法
+  Connects="AZ#DSAFSDAASDF",
+  // 实际推送的对象
+  NotifyObj = new NotifyObj()
+  {
+      Data = Data,
+      NotifyType = NotifyType,
+      OpType= OpType
+  },
+};
+HubContext.PushNotify(send);
+```
+
 ## 游戏规则
 
+### Send
 * 有GroupId
   * ExcludeUsers=true
     推送给指定的组中所有用户(排除掉UserIds部分)
@@ -60,3 +80,33 @@ HubContext.PushNotify(send);
 
   * ExcludeUsers=false
     推送给指定用户(UserIds中指定的用户)
+
+### SendConnects
+给指定的连接推送，无其他逻辑
+
+
+## Signalr提供的api
+- POST /api/Notify/Post
+formdata提交，数据如下
+``` json
+{
+  GroupIds:'', // [可空] 组id集合，多个用,隔开
+  UserIds:'',// [可空] 用户id集合，多个用,隔开
+  ExcludeUsers:boolean, // 是否排除用户列表中的用户
+  NotifyObj:Object // 通知的对象，任意类型(总大小不要超过36k)
+}
+```
+
+- POST /api/Notify/PostConnects
+formdata提交，数据如下
+``` json
+{
+  Connects:'', // 连接Id集合，多个用，隔开
+  NotifyObj:Object // 通知的对象，任意类型(总大小不要超过36k)
+}
+```
+
+- GET /api/Users   
+获取连接的所有用户Id列表
+- GET /api/groups  
+获取连接的所有组名称列表
