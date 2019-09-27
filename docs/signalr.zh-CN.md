@@ -51,8 +51,12 @@ HubContext.PushNotify(send);
 > 应用场景,比如:文件后台打包下载，那么下载的时候应该只推给当前操作的tab页，而不是当前用户
 ``` C#
 var send=new SendConnects(){
-  // 对应连接Id，需要从客户端传递到后台方法
-  Connects="AZ#DSAFSDAASDF",
+  // 用户Id，单个
+  UserId="",
+  // 连接Id，单个
+  ConnectionId="",
+  // 是否排除指定连接Id
+  ExcludeConnectId=false,
   // 实际推送的对象
   NotifyObj = new NotifyObj()
   {
@@ -82,7 +86,13 @@ HubContext.PushNotify(send);
     推送给指定用户(UserIds中指定的用户)
 
 ### SendConnects
-给指定的连接推送，无其他逻辑
+* 有UserId
+  * ExcludeConnectId=true
+    给改用户除指定的ConnectId外的所有连接端推送
+  * ExcludeConnectId=false
+    跟没指定UserId一致
+* 无UserId
+  给指定连接Id推送
 
 
 ## Signalr提供的api
