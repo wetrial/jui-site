@@ -103,7 +103,7 @@ formdata提交，数据如下
   GroupIds:'', // [可空] 组id集合，多个用,隔开
   UserIds:'',// [可空] 用户id集合，多个用,隔开
   ExcludeUsers:boolean, // 是否排除用户列表中的用户
-  NotifyObj:Object // 通知的对象，任意类型(总大小不要超过36k)
+  NotifyObj:Object // 通知的对象，任意类型(强烈建议:总大小不要超过1k)
 }
 ```
 
@@ -112,7 +112,7 @@ formdata提交，数据如下
 ``` json
 {
   Connects:'', // 连接Id集合，多个用，隔开
-  NotifyObj:Object // 通知的对象，任意类型(总大小不要超过36k)
+  NotifyObj:Object // 通知的对象，任意类型(强烈建议:总大小不要超过1k)
 }
 ```
 
