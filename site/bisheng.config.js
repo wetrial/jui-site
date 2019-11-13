@@ -19,7 +19,7 @@ function alertBabelConfig(rules) {
 }
 
 module.exports = {
-  port: 8001,
+  port: 8003,
   root: '/',
   source: {
     docs: './docs',
