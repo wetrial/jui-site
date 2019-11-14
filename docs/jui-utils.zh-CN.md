@@ -244,7 +244,7 @@ method|string|否|`post`|请求方式
 
 ### 回退到上一级菜单(相当于浏览器的回退)
 ```js
- utils.fn.urlBack()
+ utils.fn.urlBack(keys, isInclude)
 ```
 参数|类型|是否必须|默认值|注释
 -|-|-|-
